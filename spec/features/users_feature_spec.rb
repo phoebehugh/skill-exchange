@@ -1,42 +1,39 @@
 require 'rails_helper'
 
-context 'user on the homepage and not signed in' do
-  it "should see a 'sign-in' link and a 'sign-up' link" do
-    visit '/'
-    expect(page).to have_link('Sign in')
-    expect(page).to have_link('Sign up')
+feature 'users can sign in and sign out' do
+  context 'when user is not signed in' do
+    scenario 'user will see a link to sign up and sign in' do
+      visit '/'
+      expect(page).to have_link 'Sign in'
+      expect(page).to have_link 'Sign up'
+    end
+
+    scenario "should not see 'sign out' link" do
+      visit '/'
+      expect(page).not_to have_link 'Sign Out'
+    end
   end
 
-  it "should not see sign-out link" do
-    visit '/'
-    expect(page).not_to have_link('Sign out')
-  end
+  context "user signed in on the homepage" do
 
-  it "cannot create restaurant" do
-    visit '/'
-    expect(page).not_to have_link('Add a restaurant')
-  end
-end
+    before do
+      visit '/'
+      click_link('Sign up')
+      fill_in('Email', with: 'test@example.com')
+      fill_in('Password', with: 'testtest')
+      fill_in('Password confirmation', with: 'testtest')
+      click_button('Sign up')
+    end
 
-context "user signed in on the homepage" do
+    scenario "should see sign out link" do
+      visit '/'
+      expect(page).to have_link('Sign out')
+    end
 
-  before do
-    visit '/'
-    click_link('Sign up')
-    fill_in('Email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    fill_in('Password confirmation', with: 'testtest')
-    click_button('Sign up')
-  end
-
-  it "should see sign out link" do
-    visit '/'
-    expect(page).to have_link('Sign out')
-  end
-
-  it "should not see a sign in link and sign up link" do
-    visit '/'
-    expect(page).not_to have_link('Sign in')
-    expect(page).not_to have_link('Sign up')
+    scenario "should not see a sign in link and sign up link" do
+      visit '/'
+      expect(page).not_to have_link('Sign in')
+      expect(page).not_to have_link('Sign up')
+    end
   end
 end
