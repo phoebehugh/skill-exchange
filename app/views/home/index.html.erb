@@ -1,12 +1,27 @@
 Hello world!
 
 <%= link_to 'Learn', new_learnable_path %>
+<%= link_to 'Teach', new_shareable_path %>
 
 <% if user_signed_in? %>
-  Learnables:
+
   <% if current_user.learnables.any? %>
+    Learnable:
     <% current_user.learnables.each do |learnable| %>
       <%= Skill.find(learnable.skill_id).name %>
+      <% if find_matches(learnable.skill_id) %>
+        <% find_matches(learnable.skill_id).each do |match| %>
+          <%= "#{User.find(match.user_id).email} knows #{Skill.find(match.skill_id).name}" %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
+    
+  <% if current_user.shareables.any? %>
+    Shareable:
+    <% current_user.shareables.each do |shareable| %>
+      <%= Skill.find(shareable.skill_id).name %>
+    <% end %>
+  <% end %>
+
 <% end %>
