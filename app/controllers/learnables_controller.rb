@@ -9,4 +9,10 @@ class LearnablesController < ApplicationController
     redirect_to '/'
   end
 
+  def find_matches skill_id
+    Shareable.where(skill_id: skill_id)
+  end
+
+  helper_method :find_matches
+
 end

@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>SkillExchange</title>
-<!--     <link rel="stylesheet" href="css/styles.css">
- -->    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
@@ -12,8 +11,15 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path,  method: :delete, class: "btn btn-lg btn-primary" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google), class: "btn btn-lg btn-primary" %>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

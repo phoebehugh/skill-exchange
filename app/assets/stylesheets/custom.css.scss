@@ -5,6 +5,7 @@ body {
   padding-top: 60px;
   background-color: royalblue;
   color: white;
+  text-align: center;
 }
 
 section {
@@ -39,11 +40,11 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: white;
 }
 
 p {
-  font-size: 1.1em
+  font-size: 1.1em;
   line-height: 1.7em;
 }
 
@@ -57,7 +58,7 @@ p {
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: #fff
+    color: #fff;
     text-decoration: none;
   }
 }
@@ -66,12 +67,12 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #8FA7F0;
-  color: $gray-light;
+  color: white;
 
   a {
-    color: $gray;
+    color: white;
     &hover {
-      color: $gray-darker;
+      color: white;
     }
   }
 

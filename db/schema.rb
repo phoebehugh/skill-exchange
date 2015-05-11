@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511135910) do
+ActiveRecord::Schema.define(version: 20150511165414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20150511135910) do
   end
 
   add_index "learnables", ["user_id"], name: "index_learnables_on_user_id", using: :btree
+
+  create_table "shareables", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "shareables", ["user_id"], name: "index_shareables_on_user_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
@@ -44,10 +53,14 @@ ActiveRecord::Schema.define(version: 20150511135910) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "learnables", "users"
+  add_foreign_key "shareables", "users"
 end
