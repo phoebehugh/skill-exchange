@@ -1,0 +1,10 @@
+Hello world!
+
+<%= link_to 'Learn', new_learnable_path %>
+
+Learnables:
+<% if current_user.learnables.any? %>
+  <% current_user.learnables.each do |learnable| %>
+    <%= Skill.find(learnable.skill_id).name %>
+  <% end %>
+<% end %>
