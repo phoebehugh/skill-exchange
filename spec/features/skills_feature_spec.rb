@@ -21,6 +21,15 @@ feature 'Adding skills to a user profile' do
       expect(page).to have_content 'Cooking'
     end
 
+    scenario 'I can add a shareable' do
+      visit '/'
+      click_link 'Teach'
+      fill_in 'Skill', with: 'Baking'
+      click_button 'Add shareable'
+      expect(current_path).to eq '/'
+      expect(page).to have_content 'Baking'
+    end
+
   end
 
 end
