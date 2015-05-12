@@ -1,43 +1,53 @@
 <div class="Center site">
   <h1>SkillExchange</h1>
 
-  <%= link_to 'Learn', new_learnable_path %>
-
-  <% if user_signed_in? %>
-    Learnables:
-    <% if current_user.learnables.any? %>
-      <% current_user.learnables.each do |learnable| %>
-        <%= Skill.find(learnable.skill_id).name %>
-      <% end %>
-    <% end %>
-  <% end %>
-
 </div>
 
-<%= link_to 'Learn', new_learnable_path %>
-<%= link_to 'Teach', new_shareable_path %>
+<p id="start">
+  I want to
+</p>
+
+<p class="link-to-skill" id="link-learn">
+  <%= link_to 'Learn', new_learnable_path %>
+</p>
+<p class="link-to-skill" id="link-teach">
+  <%= link_to 'Teach', new_shareable_path %>
+</p>
 
 <% if user_signed_in? %>
 
-  <% if current_user.learnables.any? %>
-    Learnable:
-    <% current_user.learnables.each do |learnable| %>
-      <%= Skill.find(learnable.skill_id).name %>
-      <% if find_matches(learnable.skill_id) %>
-        <% find_matches(learnable.skill_id).each do |match| %>
-          <%= "#{User.find(match.user_id).email} knows #{Skill.find(match.skill_id).name}" %>
-          <%= instant_hangout %>
-        <% end %>
+  <section class="skill-section" id="learnables">
+    <% if current_user.learnables.any? %>
+      <p class="sub-title">My learnables:</p>
+      <ul class="skill-list" id="learnable-list">
+        <% current_user.learnables.each do |learnable| %>
+          <li class="skill-item" id="learnable-item">
+            <%= Skill.find(learnable.skill_id).name %>
+              <% if find_matches(learnable.skill_id) %>
+                <p class="sub-title">Matches found!</p>
+                <% find_matches(learnable.skill_id).each do |match| %>
+                  <p class="match"><%= "#{User.find(match.user_id).email} knows #{Skill.find(match.skill_id).name}" %></p>
+                <%= instant_hangout %>
+              <% end %>
+            <% end %>
+          </li>
+        </ul>
       <% end %>
     <% end %>
-  <% end %>
+  </section>
     
-  <% if current_user.shareables.any? %>
-    Shareable:
-    <% current_user.shareables.each do |shareable| %>
-      <%= Skill.find(shareable.skill_id).name %>
+  <section class="skill-section" id="shareables">
+    <% if current_user.shareables.any? %>
+      <p class="sub-title">My shareables:</p>
+      <ul class="skill-list" id="shareable-list">
+        <% current_user.shareables.each do |shareable| %>
+          <li class="skill-item" id="shareable-item">
+            <%= Skill.find(shareable.skill_id).name %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
-  <% end %>
+  </section>
 
 <% end %>
 
