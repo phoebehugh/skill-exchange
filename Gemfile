@@ -5,6 +5,7 @@ gem 'bootstrap-sass'
 
 gem 'figaro'
 
+gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
