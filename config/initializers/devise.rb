@@ -1,5 +1,5 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
-# Many of these configuration options can be set straight in your model.
+# Many of these configration options can be set straight in your model.
 Devise.setup do |config|
 
   config.omniauth :google_oauth2, Rails.application.secrets.google_client_id, Rails.application.secrets.google_client_secret, { }
