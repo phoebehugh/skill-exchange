@@ -1,7 +1,8 @@
 <div class="Center site">
   <h1>SkillExchange</h1>
-
 </div>
+
+<script src='instanthangouts.0.1.0.js' async></script>
 
 <section id="links-holder">
   <span class="link-to-skill" id="link-learn">
@@ -23,7 +24,7 @@
             <p class="skill-name"><%= Skill.find(learnable.skill_id).name %></p>
               <% if find_matching_shareables(learnable.skill_id).length > 0 %>
                 <% find_matching_shareables(learnable.skill_id).each do |match| %>
-                  <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
+                  <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><div class='instanthangouts' render='hangout' room_id="3" topic=<%= "#{Skill.find(match.skill_id).name}" %>><%= instant_hangout %></div>
                   </span>
               <% end %>
             <% end %>
