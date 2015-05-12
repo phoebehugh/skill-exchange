@@ -3,11 +3,12 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'bootstrap-sass'
 
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-
 gem 'jquery-ui-rails'
 gem 'rails-jquery-autocomplete'
+
+gem 'google-api-client', :require => 'google/api_client'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 gem 'google-instant-hangouts'
 
@@ -41,6 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,7 +55,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'dotenv-rails'
 end
 
 group :production do
