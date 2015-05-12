@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :learnables
-  resources :shareables
+  resources :shareables do
+    get :autocomplete_brand_name, :on => :collection
+  end
 
   # You can have the root of your site routed with "root"
   root to: 'home#index'

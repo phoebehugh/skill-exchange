@@ -7,12 +7,14 @@
   I want to
 </p>
 
-<p class="link-to-skill" id="link-learn">
-  <%= link_to 'Learn', new_learnable_path %>
-</p>
-<p class="link-to-skill" id="link-teach">
-  <%= link_to 'Teach', new_shareable_path %>
-</p>
+<section id="links-holder">
+  <p class="link-to-skill" id="link-learn">
+    <%= link_to 'Learn', new_learnable_path %>
+  </p>
+  <p class="link-to-skill" id="link-teach">
+    <%= link_to 'Teach', new_shareable_path %>
+  </p>
+</section>
 
 <% if user_signed_in? %>
 
@@ -26,7 +28,7 @@
               <% if find_matches(learnable.skill_id) %>
                 <p class="sub-title">Matches found!</p>
                 <% find_matches(learnable.skill_id).each do |match| %>
-                  <p class="match"><%= "#{User.find(match.user_id).email} knows #{Skill.find(match.skill_id).name}" %></p>
+                  <p class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %></p>
                 <%= instant_hangout %>
               <% end %>
             <% end %>

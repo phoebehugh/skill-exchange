@@ -5,6 +5,7 @@
     <title>SkillExchange</title>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "autocomplete-rails.js" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
@@ -27,3 +28,4 @@
 </html>
 
 <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-default" %>
+<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-lg btn-default" %>
