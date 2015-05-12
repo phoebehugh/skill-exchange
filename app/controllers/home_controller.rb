@@ -10,7 +10,12 @@ class HomeController < ApplicationController
     Learnable.where(skill_id: skill_id)
   end
 
+  def find_matchups skill_id
+    Matchup.where(skill_id: skill_id)
+  end
+
   helper_method :find_matching_shareables
   helper_method :find_matching_learnables
+  helper_method :find_matchups
 
 end
