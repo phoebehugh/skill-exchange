@@ -5,8 +5,11 @@ gem 'bootstrap-sass'
 
 gem 'figaro'
 
+gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+
+gem 'google-instant-hangouts'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
