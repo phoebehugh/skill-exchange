@@ -42,7 +42,7 @@
             <p class="skill-name"><%= Skill.find(shareable.skill_id).name %></p>
               <% if find_matching_learnables(shareable.skill_id).length > 0 %>
                 <% find_matching_learnables(shareable.skill_id).each do |match| %>
-                  <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
+                  <span class="match"><%= "#{User.find(match.user_id).username} wants to learn #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
                   </span>
               <% end %>
             <% end %>
