@@ -21,11 +21,10 @@
         <% current_user.learnables.each do |learnable| %>
           <li class="skill-item" id="learnable-item">
             <p class="skill-name"><%= Skill.find(learnable.skill_id).name %></p>
-              <% if find_matches(learnable.skill_id).length > 0 %>
-                <% find_matches(learnable.skill_id).each do |match| %>
+              <% if find_matching_shareables(learnable.skill_id).length > 0 %>
+                <% find_matching_shareables(learnable.skill_id).each do |match| %>
                   <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
                   </span>
-
               <% end %>
             <% end %>
           </li>
@@ -41,6 +40,12 @@
         <% current_user.shareables.each do |shareable| %>
           <li class="skill-item" id="shareable-item">
             <p class="skill-name"><%= Skill.find(shareable.skill_id).name %></p>
+              <% if find_matching_learnables(shareable.skill_id).length > 0 %>
+                <% find_matching_learnables(shareable.skill_id).each do |match| %>
+                  <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
+                  </span>
+              <% end %>
+            <% end %>
           </li>
         <% end %>
       </ul>
