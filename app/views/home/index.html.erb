@@ -15,8 +15,8 @@
 
 <% if user_signed_in? %>
 
-  <section class="skill-section" id="learnables">
-    <% if current_user.learnables.any? %>
+  <% if current_user.learnables.any? %>
+    <section class="skill-section" id="learnables">
       <p class="sub-title">My learnables</p>
       <ul class="skill-list" id="learnable-list">
         <% current_user.learnables.each do |learnable| %>
@@ -31,11 +31,11 @@
           </li>
         </ul>
       <% end %>
-    <% end %>
-  </section>
+    </section>
+  <% end %>
     
-  <section class="skill-section" id="shareables">
-    <% if current_user.shareables.any? %>
+  <% if current_user.shareables.any? %>
+    <section class="skill-section" id="shareables">
       <p class="sub-title">My shareables</p>
       <ul class="skill-list" id="shareable-list">
         <% current_user.shareables.each do |shareable| %>
@@ -50,8 +50,8 @@
           </li>
         <% end %>
       </ul>
-    <% end %>
-  </section>
+    </section>
+  <% end %>
 
 <% end %>
 
