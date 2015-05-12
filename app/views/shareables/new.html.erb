@@ -1,5 +1,5 @@
 <%= form_for @shareable do |f| %>
   <%= f.label :skill %>
-  <%= f.text_field :skill %>
+  <%= f.autocomplete_field :skill, autocomplete_skill_name_skills_path %>
   <%= f.submit 'Add shareable' %>
 <% end %>
