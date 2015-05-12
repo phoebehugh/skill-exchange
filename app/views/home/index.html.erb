@@ -3,10 +3,6 @@
 
 </div>
 
-<p id="start">
-  I want to
-</p>
-
 <section id="links-holder">
   <span class="link-to-skill" id="link-learn">
     <%= link_to 'Learn something', new_learnable_path %>
@@ -26,7 +22,6 @@
           <li class="skill-item" id="learnable-item">
             <p class="skill-name"><%= Skill.find(learnable.skill_id).name %></p>
               <% if find_matches(learnable.skill_id).length > 0 %>
-                _________
                 <% find_matches(learnable.skill_id).each do |match| %>
                   <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
                   </span>
