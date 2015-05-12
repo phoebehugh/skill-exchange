@@ -26,6 +26,7 @@
       <% if find_matches(learnable.skill_id) %>
         <% find_matches(learnable.skill_id).each do |match| %>
           <%= "#{User.find(match.user_id).email} knows #{Skill.find(match.skill_id).name}" %>
+          <%= instant_hangout %>
         <% end %>
       <% end %>
     <% end %>
