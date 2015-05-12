@@ -26,14 +26,8 @@
           <li class="skill-item" id="learnable-item">
             <p class="skill-name"><%= Skill.find(learnable.skill_id).name %></p>
               <% if find_matches(learnable.skill_id).length > 0 %>
-                <p>_________</p>
+                _________
                 <% find_matches(learnable.skill_id).each do |match| %>
-
-                  <p class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %></p>
-                <%= instant_hangout %>
-                <a href="https://calendly.com/phoebehugh" style="display: inline-block !important; padding: 14px 25px 15px !important; background-color: #68c19a !important; border: 2px solid #68c19a !important; border-radius: 5px !important; font-size: 20px !important; font-family: 'Proxima Nova', 'Lucida Grande', Helvetica, sans-serif !important; text-align: center !important; text-decoration: none !important; line-height: 26px !important; color: #fff !important; cursor: pointer !important;" target="_blank"> Schedule a meeting <span style="display: block !important; font-size: 12px !important; line-height: 18px !important; color: #afd9c7 !important;">with Calendly</span> </a>﻿
-
-
                   <span class="match"><%= "#{User.find(match.user_id).username} knows #{Skill.find(match.skill_id).name}" %><%= instant_hangout %>
                   </span>
 
