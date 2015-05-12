@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'bootstrap-sass'
 
-gem 'figaro'
+gem 'jquery-ui-rails'
+gem 'rails-jquery-autocomplete'
 
 gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth'

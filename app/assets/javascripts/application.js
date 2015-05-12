@@ -15,4 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+//= require jquery-ui
+//= require autocomplete-rails
+
 //= require google-instant-hangouts

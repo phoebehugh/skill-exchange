@@ -1,5 +1,7 @@
 class ShareablesController < ApplicationController
 
+  autocomplete :skill, :full => true, :limit => 10
+
   def new
     @shareable = Shareable.new
   end
