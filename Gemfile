@@ -6,7 +6,7 @@ gem 'bootstrap-sass'
 gem 'figaro'
 
 gem 'omniauth'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -50,5 +50,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'dotenv-rails'
 end
 
