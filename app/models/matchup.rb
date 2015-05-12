@@ -1,4 +1,5 @@
 class Matchup < ActiveRecord::Base
-  has_many :learnables
-  has_many :shareables
+  has_one :learnable
+  has_one :shareable
+  has_one :skill
 end
