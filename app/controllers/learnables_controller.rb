@@ -1,4 +1,7 @@
 class LearnablesController < ApplicationController
+
+  autocomplete :skill, :full => true, :limit => 10
+
   def new
     @learnable = Learnable.new
   end

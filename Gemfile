@@ -5,6 +5,7 @@ gem 'bootstrap-sass'
 
 gem 'jquery-ui-rails'
 gem 'rails-jquery-autocomplete'
+gem 'nifty-generators'
 
 gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth'

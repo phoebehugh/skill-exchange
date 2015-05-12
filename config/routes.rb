@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :learnables
-  resources :shareables do
-    get :autocomplete_skill, :on => :collection
+  resources :shareables
+  resources :skills do
+    get :autocomplete_skill_name, :on => :collection
   end
 
   # You can have the root of your site routed with "root"
