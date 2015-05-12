@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :learnables
   resources :shareables do
     get :autocomplete_skill, :on => :collection
-  end
+  end  
 
   # You can have the root of your site routed with "root"
   root to: 'home#index'
