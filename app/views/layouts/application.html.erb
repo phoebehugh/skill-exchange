@@ -14,9 +14,6 @@
       <% if user_signed_in? %>
         <%= link_to "Sign out", destroy_user_session_path,  method: :delete, class: "btn btn-lg btn-default" %>
       <% else %>
-        <%= link_to "Sign in", new_user_session_path, class: "btn btn-lg btn-default" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-default" %>
-        <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google), class: "btn btn-lg btn-default" %>
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-lg btn-primary" %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-lg btn-primary" %>
         <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-lg btn-primary" %>
