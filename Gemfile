@@ -3,10 +3,13 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'bootstrap-sass'
 
-gem 'figaro'
-
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+
+gem 'jquery-ui-rails'
+gem 'rails-jquery-autocomplete'
+
+gem 'google-instant-hangouts'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
