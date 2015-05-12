@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512093827) do
+ActiveRecord::Schema.define(version: 20150512125406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20150512093827) do
   end
 
   add_index "learnables", ["user_id"], name: "index_learnables_on_user_id", using: :btree
+
+  create_table "matchups", force: :cascade do |t|
+    t.string   "sharer"
+    t.string   "learner"
+    t.string   "skill"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "shareables", force: :cascade do |t|
     t.integer  "user_id"

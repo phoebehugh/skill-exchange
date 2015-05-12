@@ -31,8 +31,11 @@ p.sub-title {
 }
 
 .skill-section {
-
-  padding-top: 30px;
+  
+  border: 1px solid lightgray;
+  padding: 30px 30px 50px 30px;
+  border-radius: 10px;
+  margin-top: 20px;
 
   ul {
     list-style-type: none;
@@ -47,7 +50,6 @@ p.sub-title {
 
 
     float: left;
-    background-color: lightblue;
     border-radius: 10px;
     padding: 10px 20px 10px 20px;
     text-align: left;
@@ -57,8 +59,16 @@ p.sub-title {
       font-weight: bold;
     }
 
+
   }
   
+  #learnable-item {
+    background-color: lightblue;
+  }
+
+  #shareable-item {
+    background-color: lightgreen;
+  }
 }
 
 section {
