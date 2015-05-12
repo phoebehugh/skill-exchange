@@ -3,13 +3,23 @@
 
 body {
   padding-top: 60px;
-  background-color: royalblue;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 section {
   overflow: auto;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.navbar {
+  background-color: #f8f8f8;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
 }
 
 textarea {
@@ -40,7 +50,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: white;
+  color: black;
 }
 
 p {
@@ -52,13 +62,13 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: darkslategray;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: #fff;
+    color: darkslategray;
     text-decoration: none;
   }
 }
@@ -67,12 +77,12 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #8FA7F0;
-  color: white;
+  color: black;
 
   a {
-    color: white;
+    color: black;
     &hover {
-      color: white;
+      color: black;
     }
   }
 
